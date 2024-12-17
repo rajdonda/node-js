@@ -2,8 +2,9 @@ console.log("hello");
 
 // Declare a variable
 let number = 10;
-const name = "hello";
+const name = "huh";
 var age = 25; 
+console.log(number,name,age);
 
 
 // sum function
