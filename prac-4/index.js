@@ -28,8 +28,11 @@ const app = http.createServer((req, res) => {
         case '/review':
             fileName = 'review.html';
             break;
-        default:
+        case '/con':
             fileName = 'contact.html';
+        break;
+            default :
+            fileName = '404.html';
     }
 
     fs.readFile(fileName, (err, pagename) => {
