@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Records</title>
+</head>
+<body>
+    <h1 align="center">View Records</h1>
+    <table border="1" align="center">
+       
+        <tr>
+            
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+        <% records.forEach(record => { %>
+        <tr>
+            <td><%= record.name %></td>
+            <td><%= record.phone %></td>
+        </tr>
+        <% }); %>
+        
+    </table>
+   <div align="center"> <a  href="/add">Add More Records</a></div>
+</body>
+</html>
