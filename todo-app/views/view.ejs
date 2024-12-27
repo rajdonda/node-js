@@ -6,22 +6,27 @@
     <title>View Records</title>
 </head>
 <body>
-    <h1 align="center">View Records</h1>
+<div align="center">    <h1>View Records</h1></div>
     <table border="1" align="center">
-       
         <tr>
-            
+            <th>ID</th>
             <th>Name</th>
             <th>Phone</th>
+            <th>Action</th>
         </tr>
         <% records.forEach(record => { %>
         <tr>
+            <td><%= record.id %></td>
             <td><%= record.name %></td>
             <td><%= record.phone %></td>
+            <td>
+                <form action="/delete/<%= record.id %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
         </tr>
         <% }); %>
-        
     </table>
-   <div align="center"> <a  href="/add">Add More Records</a></div>
+   <div align="center"> <a href="/add">Add More Records</a></div>
 </body>
 </html>
