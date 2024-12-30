@@ -6,13 +6,13 @@
     <title>View Records</title>
 </head>
 <body>
-<div align="center">    <h1>View Records</h1></div>
-    <table border="1" align="center">
+    <h1>View Records</h1>
+    <table border="1">
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Phone</th>
-            <th>Action</th>
+            <th>Actions</th>
         </tr>
         <% records.forEach(record => { %>
         <tr>
@@ -20,13 +20,18 @@
             <td><%= record.name %></td>
             <td><%= record.phone %></td>
             <td>
+                <!-- Delete Button -->
                 <form action="/delete/<%= record.id %>" method="POST" style="display:inline;">
                     <button type="submit">Delete</button>
                 </form>
+                <!-- Edit Button -->
+                <a href="/edit/<%= record.id %>">
+                    <button>Edit</button>
+                </a>
             </td>
         </tr>
         <% }); %>
     </table>
-   <div align="center"> <a href="/add">Add More Records</a></div>
+    <a href="/add">Add More Records</a>
 </body>
 </html>
