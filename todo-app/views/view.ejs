@@ -4,10 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        button[type="submit"], button[type="button"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover, button[type="button"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .edit-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .edit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <h1>View Records</h1>
-    <table border="1">
+    <table>
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -22,11 +77,11 @@
             <td>
                 <!-- Delete Button -->
                 <form action="/delete/<%= record.id %>" method="POST" style="display:inline;">
-                    <button type="submit">Delete</button>
+                    <button type="submit" class="edit-button">Delete</button>
                 </form>
-                <!-- Edit Button -->
-                <a href="/edit/<%= record.id %>">
-                    <button>Edit</button>
+            
+                <a href="/edit/<%= record.id %>" style="display:inline;">
+                    <button class="edit-button">Edit</button>
                 </a>
             </td>
         </tr>

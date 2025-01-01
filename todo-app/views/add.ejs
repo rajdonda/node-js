@@ -4,17 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     
-    <form action="/add" method="POST" align="center">
+    <form action="/add" method="POST">
         <h1>Add Record</h1>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
-        <label for="phone">Phone:</label>   
-        <input type="text" id="phone" name="phone" required><br>
+        <input type="text" id="name" name="name" required>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
         <button type="submit">Add</button>
-        <div align="center"> <a  href="/view">view</a></div>
+        <a href="/view">View Records</a>
     </form>
 </body>
 </html>
