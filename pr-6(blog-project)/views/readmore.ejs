@@ -1,0 +1,109 @@
+<%- include('Header') %>
+
+<section class="py-5" style="background-color: #f9f9f9;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Image Section -->
+            <div class="col-lg-6 col-md-6 col-12 mb-4">
+                <% if (single && single.image) { %>
+                    <img src="<%= single.image %>" alt="Image" class="rounded img-fluid shadow">
+                <% } else { %>
+                    <p class="text-muted text-center">No image available</p>
+                <% } %>
+            </div>
+            <!-- Content Section -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <h2 class="mb-3" style="color: #333;">
+                   <strong style="font-weight: 600;">Title:</strong> <%= single.title ? single.title : "No Title Available" %>
+                </h2>
+                <p class="text-muted mb-4" style="font-size: 1.2rem;">
+                   <strong style="color: #000 !important;">Description:</strong> <%= single.description ? single.description : "No Description Available" %>
+                </p>
+                <h5 class="mb-4" style="color: #555;">
+                    <strong>Author:</strong> <%= single.author ? single.author : "Unknown Author" %>
+                </h5>
+                <!-- Buttons Section -->
+                <div class="btns d-flex flex-wrap gap-3">
+                    <a href="/editBlog?editId=<%= single._id %>" 
+                        class="btn btn-primary shadow"
+                        style="padding: 15px 40px; font-size: 1rem; font-weight: 600; background-color: #0056b3; border: none; margin-right: 2%; margin-bottom: 10px;">
+                        Edit
+                    </a>
+                    <a href="/deleteBlog?deletId=<%= single._id %>" 
+                        class="btn btn-danger shadow"
+                        style="padding: 15px 40px; font-size: 1rem; font-weight: 600; background-color: #d9534f; border: none; margin-right: 2%; margin-bottom: 10px;">
+                        Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('Footer') %>
+
+<style>
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+h1, h5 {
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Button Hover Effects */
+.btn-primary:hover {
+    background-color: #004085;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .col-12 {
+        width: 100%;
+        padding: 0 15px; /* Add padding to ensure content is not flush with edges */
+    }
+
+    .btns {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .btns a {
+        margin-bottom: 10px;
+        width: 100%; /* Buttons span the full width */
+    }
+
+    img {
+        max-width: 100%; /* Ensure images scale properly */
+        height: auto;
+    }
+
+    h2, p, h5 {
+        text-align: left;
+    }
+}
+</style>

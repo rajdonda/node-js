@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Management</title>
+    <link href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e9ecef; /* Changed background color */
+            font-family: 'Arial', sans-serif; /* Changed font family */
+        }
+        .topbar {
+            background: #007bff; /* Changed background color */
+            padding: 10px;
+            color: white;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #343a40; /* Changed background color */
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+            z-index: 1000; /* Added z-index to ensure sidebar is above the main content */
+        }
+        .sidebar a {
+            padding: 10px 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background: #007bff; /* Changed background color */
+            border-radius: 5px;
+        }
+        .main-content {
+            margin-left: 260px; /* Adjusted margin to ensure main content is pushed to the right */
+            padding: 20px;
+            transition: margin-left 0.3s ease; /* Added transition for smooth movement */
+        }
+        .logout-btn {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .toggle-btn {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            cursor: pointer;
+            z-index: 1000; /* Added z-index to ensure toggle button is above the main content */
+            transition: left 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <h3 class="text-center">Blog Management</h3>
+        <form action="/logout" method="POST" class="logout-btn">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+        <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="mdi mdi-menu"></i>
+        </button>
+    </div>
+    <div class="sidebar">
+        <a href="/dashboard"><i class="mdi mdi-view-dashboard me-2"></i> Dashboard</a>
+        <a href="/add"><i class="mdi mdi-plus-box me-2"></i> Add Blogs</a>
+    </div>
+    <div class="main-content">
+        <h4>Welcome to the Blog Management</h4>
+        <p>Manage your blogs easily with the navigation links on the left.</p>
+    </div>
+</body>
+<script>
+    function toggleSidebar() {
+        var sidebar = document.querySelector('.sidebar');
+        var mainContent = document.querySelector('.main-content');
+        var toggleBtn = document.querySelector('.toggle-btn');
+        if (sidebar.style.transform === 'translateX(-100%)') {
+            sidebar.style.transform = 'translateX(0)';
+            mainContent.style.marginLeft = '250px'; /* Adjusted margin to push main content to the right */
+            toggleBtn.style.left = '250px';
+        } else {
+            sidebar.style.transform = 'translateX(-100%)';
+            mainContent.style.marginLeft = '0'; /* Reset margin to original position */
+            toggleBtn.style.left = '20px';
+        }
+    }
+</script>
+</html>

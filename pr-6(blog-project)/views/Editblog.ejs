@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Blog - BlogCanvas</title>
+    <style>
+        *, *::before, *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body, input {
+            background: #333;
+            color: #fff;
+        }
+
+        main {
+            width: 100%;
+            min-height: 100vh;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .box {
+            width: 500px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 3rem;
+            backdrop-filter: blur(30px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .heading h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .input-wrap {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.4);
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .sign-btn {
+            width: 100%;
+            background: #fff;
+            color: #333;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .sign-btn:hover {
+            background: #444;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <div class="heading ">
+                <h2>Edit Blog</h2>
+            </div>
+            <form action="/updateBlog" method="post" enctype="multipart/form-data">
+                <div class="input-wrap">
+                    <label class="form-label" style="color: #fff;">Title:</label>
+                    <input type="text" name="title" class="input-field" value="<%= single.title %>" required placeholder="Enter Your Title" />
+                </div>
+                <div class="input-wrap">
+                    <label class="form-label" style="color: #fff;">Description:</label>
+                    <textarea class="input-field" name="description" required placeholder="Enter Your Description"><%= single.description %></textarea>
+                </div>
+                <div class="input-wrap">
+                    <label class="form-label" style="color: #fff;">Author:</label>
+                    <input type="text" name="author" class="input-field" value="<%= single.author %>" required placeholder="Enter Your Author" />
+                </div>
+                <div class="input-wrap">
+                    <label class="form-label" style="color: #fff;">Image:</label>
+                    <input type="file" name="image" class="input-field" />
+                </div>
+                <input type="hidden" name="editid" value="<%= single._id %>">
+                <input type="submit" value="Repost with Changes" class="sign-btn" />
+            </form>
+        </div>
+    </main>
+</body>
+</html>
