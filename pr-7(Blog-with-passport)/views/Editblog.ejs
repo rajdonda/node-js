@@ -1,0 +1,41 @@
+<%- include('Header') %>
+<div class="page-wrapper" style="background: linear-gradient(135deg, #1e3c72, #2a5298); padding: 2rem; min-height: 100vh; display: flex; align-items: center; justify-content: center;margin: 0;">
+    <div class="container">
+        <h1 class="text-center mb-4 text-white fw-bold" style="font-size: 2rem; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">✏️ Modify Blog Content</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0" style="border-radius: 20px; overflow: hidden; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
+                    <div class="box p-4">
+                        <form class="p-4" action="/updateBlog" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label class="form-label text-white fw-bold">📌 Title:</label>
+                                <input type="text" class="form-control" name="title" value="<%= single.title %>" required style="border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 10px;">
+                            </div>
+                        
+                            <div class="mb-3">
+                                <label class="form-label text-white fw-bold">📝 Description:</label>
+                                <textarea class="form-control" name="description" required style="border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 10px;"><%= single.description %></textarea>
+                            </div>
+                        
+                            <div class="mb-3">
+                                <label class="form-label text-white fw-bold">👤 Author:</label>
+                                <input type="text" class="form-control" name="author" value="<%= single.author %>" required style="border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 10px;">
+                            </div>
+                        
+                            <div class="mb-3">
+                                <label class="form-label text-white fw-bold">📷 Image:</label>
+                                <input type="file" class="form-control" name="image" style="border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 10px;">
+                            </div>
+                        
+                            <input type="hidden" name="editid" value="<%= single._id %>">
+                            <button type="submit" class="btn w-100" style="border-radius: 12px; font-weight: bold; background: linear-gradient(135deg, #ff7eb3, #ff758c); color: white; padding: 12px; box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);">🚀 Repost with Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('Footer') %>

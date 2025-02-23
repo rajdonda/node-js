@@ -1,0 +1,42 @@
+<%- include('Header') %>
+
+<div class="page-wrapper" style="background: linear-gradient(135deg, #1e3c72, #2a5298); padding: 2rem; min-height: 100vh; margin: 0; display: flex; align-items: center; justify-content: center;">
+    <div class="container">
+        <h1 class="text-center mb-4 text-white fw-bold" style="font-size: 2rem; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);">📝 Create a New Blog Post</h1>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0" style="border-radius: 20px; overflow: hidden; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                    <div class="box p-4" style="border-radius: 20px;">
+                        <form action="/insertBlog" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-white">📌 Title:</label>
+                                <input type="text" class="form-control" name="title" required style="border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 10px;">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-white">📝 Description:</label>
+                                <textarea class="form-control" name="description" required style="border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 10px;"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-white">👤 Author:</label>
+                                <input type="text" class="form-control" name="author" required style="border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 10px;">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-white">📷 Image:</label>
+                                <input type="file" class="form-control" name="image" required style="border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 10px;">
+                            </div>
+
+                            <button type="submit" class="btn w-100" style="border-radius: 12px; font-weight: bold; background: linear-gradient(135deg, #ff7eb3, #ff758c); color: white; padding: 12px; box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);">🚀 Publish Blog</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <%- include('Footer') %>
