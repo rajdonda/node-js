@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UTHR Fashion Website</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/uthr title logo.jpg" />
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+</head>
+<style>
+  #categoryMenu {
+    padding-left: 1rem;
+    display: none;
+  }
+
+  #categoryMenu:not(.collapse) {
+    display: block;
+  }
+</style>
+
+<body style="background: linear-gradient(135deg, #1e1e2f, #3a3a60); color: white; font-family: Arial, sans-serif;">
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+          <a href="./index.html" class="text-nowrap logo-img">
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
+              <span class="hide-menu">Home</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/dashboard" aria-expanded="false">
+                <iconify-icon icon="solar:widget-add-line-duotone"></iconify-icon>
+                <span class="hide-menu">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <span class="sidebar-divider lg"></span>
+            </li>
+            <li class="nav-small-cap">
+              <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
+              <span class="hide-menu">CRUD Operations</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false" id="categoryToggle1">
+                <i class="fas fa-folder-plus"></i>
+                <span class="hide-menu">Manage Categories</span>
+                <i class="fas fa-angle-down float-end"></i>
+              </a>
+              <ul class="list-unstyled collapse" id="categoryMenu1">
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/category" aria-expanded="false">
+                    <iconify-icon icon="solar:list-check-line-duotone"></iconify-icon>
+                    <span class="hide-menu">View Categories</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/category/addcategory" aria-expanded="false">
+                    <iconify-icon icon="material-symbols:add"></iconify-icon>
+                    <span class="hide-menu">Add Category</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false" id="subcategoryToggle">
+                <i class="fas fa-folder-plus"></i>
+                <span class="hide-menu">Manage Subcategories</span>
+                <i class="fas fa-angle-down float-end"></i>
+              </a>
+              <ul class="list-unstyled collapse" id="subcategoryMenu">
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/subcategory" aria-expanded="false">
+                    <iconify-icon icon="solar:list-check-line-duotone"></iconify-icon>
+                    <span class="hide-menu">View Subcategories</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/subcategory/addsubcategory" aria-expanded="false">
+                    <iconify-icon icon="material-symbols:add"></iconify-icon>
+                    <span class="hide-menu">Add Subcategory</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false" id="exsubcategoryToggle">
+                <i class="fas fa-folder-plus"></i>
+                <span class="hide-menu">Manage Exsubcategories</span>
+                <i class="fas fa-angle-down float-end"></i>
+              </a>
+              <ul class="list-unstyled collapse" id="exsubcategoryMenu">
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/exsubcategory" aria-expanded="false">
+                    <iconify-icon icon="solar:list-check-line-duotone"></iconify-icon>
+                    <span class="hide-menu">View Exsubcategories</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/exsubcategory/addexsubcategory" aria-expanded="false">
+                    <iconify-icon icon="material-symbols:add"></iconify-icon>
+                    <span class="hide-menu">Add Exsubcategory</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false" id="productToggle">
+                <i class="fas fa-folder-plus"></i>
+                <span class="hide-menu">Manage Products</span>
+                <i class="fas fa-angle-down float-end"></i>
+              </a>
+              <ul class="list-unstyled collapse" id="productMenu">
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/product" aria-expanded="false">
+                    <iconify-icon icon="solar:list-check-line-duotone"></iconify-icon>
+                    <span class="hide-menu">View Products</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/product/addproduct" aria-expanded="false">
+                    <iconify-icon icon="material-symbols:add"></iconify-icon>
+                    <span class="hide-menu">Add Product</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="sidebar-divider lg"></span>
+            </li>
+          </ul>
+
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <script>
+      // Toggle each dropdown independently
+      document.getElementById('categoryToggle1').addEventListener('click', function () {
+        const menu = document.getElementById('categoryMenu1');
+        menu.classList.toggle('collapse');
+      });
+
+      document.getElementById('subcategoryToggle').addEventListener('click', function () {
+        const menu = document.getElementById('subcategoryMenu');
+        menu.classList.toggle('collapse');
+      });
+
+      document.getElementById('exsubcategoryToggle').addEventListener('click', function () {
+        const menu = document.getElementById('exsubcategoryMenu');
+        menu.classList.toggle('collapse');
+      });
+      document.getElementById('productToggle').addEventListener('click', function () {
+        const menu = document.getElementById('productMenu');
+        menu.classList.toggle('collapse');
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const toastEl = document.querySelector('.toast');
+        if (toastEl) {
+          const toast = new bootstrap.Toast(toastEl);
+          toast.show();
+        }
+      });
+    </script>
