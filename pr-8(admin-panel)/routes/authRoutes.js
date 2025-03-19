@@ -30,7 +30,7 @@ routes.get('/newpassword', newpasswordPage)
 routes.post('/verifyotp', verifyOtp)
 routes.post('/setnewpassword', setNewPassword)
 routes.post('/loginuser', passport.authenticate('local', { failureRedirect: '/' }), loginUser)
-routes.get('/logoutuser', logoutUser)
+routes.get('/logoutuser',  logoutUser)
 routes.get('/dashboard', passport.checkUser, dashboardPage);
 
 module.exports = routes;    

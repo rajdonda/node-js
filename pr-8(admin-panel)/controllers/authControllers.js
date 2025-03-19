@@ -35,6 +35,9 @@ const loginUser = async (req, res) => {
     }
 }
 const dashboardPage = (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     return res.render('dashboard');
 }
 const logoutUser = (req, res) => {
@@ -49,28 +52,52 @@ const logoutUser = (req, res) => {
    
 }
 const typoPage = (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     return res.render('typography')
 }
 const cardPage = (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     return res.render('card')
 }
 const formsPage = (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     return res.render('forms')
 }
 const alertPage = (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     return res.render('alert')
 }
 const buttonPage = (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     return res.render('button')
 }
 const samplePage = (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     return res.render('sample')
 }
 const iconPage = (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     return res.render('icon')
 }
 const otpPage = async (req, res) => {
     try {
+        if (!req.isAuthenticated()) {
+            return res.redirect('/login');
+        }
         return res.render('otp')
 
     } catch (error) {
@@ -80,6 +107,9 @@ const otpPage = async (req, res) => {
 }
 const newpasswordPage = async (req, res) => {
     try {
+        if (!req.isAuthenticated()) {
+            return res.redirect('/login');
+        }
         return res.render('newpassword')
 
     } catch (error) {

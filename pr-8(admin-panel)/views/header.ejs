@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UTHR Fashion Website</title>
-  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/uthr title logo.jpg" />
+  <title>Fashion Website</title>
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
@@ -19,6 +18,13 @@
 
   #categoryMenu:not(.collapse) {
     display: block;
+  }
+
+  .sidebar-item-manual {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
   }
 </style>
 
@@ -45,9 +51,8 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/dashboard" aria-expanded="false">
-                <iconify-icon icon="solar:widget-add-line-duotone"></iconify-icon>
-                <span class="hide-menu">Dashboard</span>
+              <a class="sidebar-link" href="/dashboard" aria-expanded="false" style="background-color: #1e1e2f;">
+                <span class="hide-menu" style="color: white;">Dashboard</span>
               </a>
             </li>
             <li>
@@ -57,85 +62,73 @@
               <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
               <span class="hide-menu">CRUD Operations</span>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item sidebar-item-manual">
               <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false" id="categoryToggle1">
-                <i class="fas fa-folder-plus"></i>
                 <span class="hide-menu">Manage Categories</span>
                 <i class="fas fa-angle-down float-end"></i>
               </a>
               <ul class="list-unstyled collapse" id="categoryMenu1">
-                <li class="sidebar-item">
+                <li class="sidebar-item ">
                   <a class="sidebar-link" href="/category" aria-expanded="false">
-                    <iconify-icon icon="solar:list-check-line-duotone"></iconify-icon>
                     <span class="hide-menu">View Categories</span>
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="/category/addcategory" aria-expanded="false">
-                    <iconify-icon icon="material-symbols:add"></iconify-icon>
                     <span class="hide-menu">Add Category</span>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item sidebar-item-manual">
               <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false" id="subcategoryToggle">
-                <i class="fas fa-folder-plus"></i>
                 <span class="hide-menu">Manage Subcategories</span>
                 <i class="fas fa-angle-down float-end"></i>
               </a>
               <ul class="list-unstyled collapse" id="subcategoryMenu">
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="/subcategory" aria-expanded="false">
-                    <iconify-icon icon="solar:list-check-line-duotone"></iconify-icon>
                     <span class="hide-menu">View Subcategories</span>
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="/subcategory/addsubcategory" aria-expanded="false">
-                    <iconify-icon icon="material-symbols:add"></iconify-icon>
                     <span class="hide-menu">Add Subcategory</span>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item sidebar-item-manual">
               <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false" id="exsubcategoryToggle">
-                <i class="fas fa-folder-plus"></i>
                 <span class="hide-menu">Manage Exsubcategories</span>
                 <i class="fas fa-angle-down float-end"></i>
               </a>
               <ul class="list-unstyled collapse" id="exsubcategoryMenu">
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="/exsubcategory" aria-expanded="false">
-                    <iconify-icon icon="solar:list-check-line-duotone"></iconify-icon>
                     <span class="hide-menu">View Exsubcategories</span>
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="/exsubcategory/addexsubcategory" aria-expanded="false">
-                    <iconify-icon icon="material-symbols:add"></iconify-icon>
                     <span class="hide-menu">Add Exsubcategory</span>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item sidebar-item-manual">
               <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false" id="productToggle">
-                <i class="fas fa-folder-plus"></i>
                 <span class="hide-menu">Manage Products</span>
                 <i class="fas fa-angle-down float-end"></i>
               </a>
               <ul class="list-unstyled collapse" id="productMenu">
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="/product" aria-expanded="false">
-                    <iconify-icon icon="solar:list-check-line-duotone"></iconify-icon>
                     <span class="hide-menu">View Products</span>
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="/product/addproduct" aria-expanded="false">
-                    <iconify-icon icon="material-symbols:add"></iconify-icon>
                     <span class="hide-menu">Add Product</span>
                   </a>
                 </li>

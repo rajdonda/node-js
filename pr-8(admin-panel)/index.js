@@ -1,14 +1,14 @@
 const express = require('express')
 const connectDb = require('./config/db')
 const app = express()
-const port = 8000;
+const port = 8080;
 connectDb();
 app.set('view engine', 'ejs');
 const passport = require('passport')
 const passportLocal = require('./config/passportlocal');
 const session = require('express-session')
 app.use(session({
-    secret: 'jay',
+    secret: 'raj',
     resave: false,
     saveUninitialized: true,
     cookie: {
