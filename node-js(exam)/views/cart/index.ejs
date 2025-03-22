@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+
+    <h2>Shopping Cart</h2>
+
+    <% if (products && products.length> 0) { %>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% products.forEach(function(product) { %>
+                        <tr>
+                            <td>
+                                <img src="<%= product.image %>" alt="<%= product.name %>" style="width: 50px;">
+                                <%= product.name %>
+                            </td>
+                            <td>$<%= product.price %>
+                            </td>
+                            <td>
+                                <input type="number" value="<%= product.quantity %>" min="1" max="<%= product.qty %>"
+                                    class="form-control cart-quantity" data-product-id="<%= product._id %>" readonly>
+                            </td>
+                            <td>$<%= (product.price * product.quantity).toFixed(2) %>
+                            </td>
+                            <td>
+                                <form action="/cart/remove/<%= product._id %>" method="POST">
+                                    <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-right"><strong>Total:</strong></td>
+                        <td>$<%= products.reduce((total, product)=> total + (product.price * product.quantity),
+                                0).toFixed(2) %></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="text-right mt-3">
+            <a href="/products" class="btn btn-primary">Continue Shopping</a>
+            <a href="/checkout" class="btn btn-success">Checkout</a>
+        </div>
+        <% } else { %>
+            <div class="alert alert-info">
+                Your cart is empty. <a href="/products">Continue shopping</a>
+            </div>
+            <% } %>
+
+                <%- include('../partials/footer') %>

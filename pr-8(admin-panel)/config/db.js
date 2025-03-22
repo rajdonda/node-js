@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const link = "mongodb://0.0.0.0:27017/admin-panel";
+const link = "mongodb://0.0.0.0:27017/exam2025";
 
 const connectDb = async () => {
     try {

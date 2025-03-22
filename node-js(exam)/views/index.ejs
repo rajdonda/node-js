@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Our Store</h1>
+    <p class="lead">Find the best products at great prices.</p>
+    <hr class="my-4">
+    <% if (!user) { %>
+        <p>Please login or register to start shopping.</p>
+        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+        <a class="btn btn-success btn-lg" href="/register" role="button">Register</a>
+    <% } else { %>
+        <p>Browse our latest products and add them to your cart.</p>
+        <a class="btn btn-primary btn-lg" href="/products" role="button">View Products</a>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card bg-dark">
+                <div class="card-body">
+                    <h1 class="text-center mb-3 text-light">Edit Product</h1>
+                    <form action="/products/<%= product._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="name" class="text-primary">Product Name</label>
+                            <input type="text" id="name" name="name" class="form-control" value="<%= product.name %>"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price" class="text-primary">Price</label>
+                            <input type="number" id="price" name="price" class="form-control" step="0.01"
+                                value="<%= product.price %>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="qty" class="text-primary">Quantity</label>
+                            <input type="number" id="qty" name="qty" class="form-control" value="<%= product.qty %>"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="text-primary">Description</label>
+                            <textarea id="description" name="description" class="form-control"
+                                required><%= product.description %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class="text-primary">Category</label>
+                            <select id="category" name="category" class="form-control" required>
+                                <option value="">Select a category</option>
+                                <option value="Electronics" <%=product.category==='Electronics' ? 'selected' : '' %>
+                                    >Electronics</option>
+                                <option value="Clothing" <%=product.category==='Clothing' ? 'selected' : '' %>>Clothing
+                                </option>
+                                <option value="Books" <%=product.category==='Books' ? 'selected' : '' %>>Books</option>
+                                <option value="Home & Garden" <%=product.category==='Home & Garden' ? 'selected' : '' %>
+                                    >Home & Garden</option>
+                                <option value="Sports" <%=product.category==='Sports' ? 'selected' : '' %>>Sports
+                                </option>
+                                <option value="Other" <%=product.category==='Other' ? 'selected' : '' %>>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="image" class="text-primary">Current Image</label>
+                            <img src="<%= product.image %>" alt="Current product image" class="img-thumbnail mb-2"
+                                style="max-width: 200px;">
+                            <input type="file" id="image" name="image" class="form-control-file">
+                            <small class="form-text text-muted">Leave empty to keep current image</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Update Product</button>
+                        <a href="/products" class="btn btn-secondary btn-block mt-2">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
